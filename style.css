@@ -1,0 +1,120 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333; /* Default text color */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #f0f0f0; /* Light grey header background */
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #222; /* Header title color */
+}
+
+header p.tagline {
+    color: #555; /* Tagline color */
+    font-style: italic;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #444; /* Section heading color */
+    border-bottom: 2px solid #ddd; /* Subtle underline for headings */
+    padding-bottom: 5px;
+}
+
+#features ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#features li {
+    margin-bottom: 10px;
+}
+
+.command-example {
+    background-color: #f9f9f9; /* Light background for command examples */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.command-example h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #007bff; /* Example command color - blue */
+}
+
+.command {
+    font-weight: bold;
+    color: #007bff; /* Command text color */
+}
+
+pre {
+    background-color: #e8e8e8; /* Light grey background for code blocks */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* For horizontal scrolling if code is too wide */
+    font-family: monospace, monospace; /* Monospace font for code */
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff; /* Button background color - blue */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer {
+    background-color: #333; /* Dark footer background */
+    color: #ddd; /* Light footer text color */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #fff; /* White link color in footer */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments (optional - for smaller screens) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    header {
+        padding: 30px 0;
+    }
+    section {
+        padding: 30px 0;
+    }
+}
