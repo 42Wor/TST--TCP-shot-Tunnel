@@ -124,6 +124,54 @@
 
 
     </style>
+    <style>
+
+
+.download-browser-modal {
+    display: none; 
+    position: fixed; 
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.473); 
+}
+
+.download-browser-content {
+    background-color: #00000033; 
+    margin: 10% auto; 
+    padding: 25px; 
+    border:  1px solid #ffc0ec; 
+    border-radius: 8px; 
+    width: 80%; 
+    max-width: 800px; 
+    position: relative; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
+}
+
+/* Close button */
+.close-button {
+    color: #ff0000; /* Lighter close button */
+    position: absolute;
+    top: 15px; /* Adjusted position */
+    right: 20px; /* Adjusted position */
+    font-size: 30px; /* Slightly larger */
+    font-weight: bold;
+    opacity: 0.8; /* Slightly transparent */
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--light-text-color-1); /* Light text on hover */
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1; /* Fully opaque on hover */
+}
+
+    </style>
 </head>
 <body>
 
@@ -133,14 +181,29 @@
         <h1>Welcome to TST - TCP-shot-Tunnel</h1>
         <p class="subtitle">Your simple command-line tool to bridge TCP to HTTP.</p>
 
+
+        <div id="downloadBrowserModal" class="download-browser-modal">
+            <div class="download-browser-content">
+            <span class="close-button" id="closedownloadBrowser">×</span>
+            <h2>Download TST</h2>
+            <p>Download the latest version of TST for your platform.</p>
+            <a href="tst-tool.zip" class="button primary-button download-button">Download TST v1.2.24</a>
+            <a href="tst-tool.zip" class="button secondary-button download-button">Download TST v0.5.25</a>
+            <p>For installation instructions, please refer to the <a href="Documentation/#installation-doc">installation documentation</a>.</p>
+            </div>
+        </div>
+
         <div class="header-buttons">
-            <a href="#download" class="button primary-button download-button">Download Now</a>
+            <button type="button" id="opendownloadBrowser" class="button primary-button download-button">Download Now</button>
             <a href="Documentation.html" class="button secondary-button documentation-button">Documentation</a>
         </div>
     </div> <!-- End of content wrapper -->
 
 
 <script>
+        const opendownloadBrowserButton = document.getElementById('opendownloadBrowser');
+        const downloadBrowserModal = document.getElementById('downloadBrowserModal');
+        const closedownloadBrowserButton = document.getElementById('closedownloadBrowser');
     document.addEventListener('DOMContentLoaded', function() {
         const body = document.body;
         const backgroundImg = new Image();
@@ -156,6 +219,20 @@
 
         backgroundImg.src = 'tst-tool1.jpg';
     });
+    opendownloadBrowserButton.addEventListener('click', () => {
+        downloadBrowserModal.style.display = "block";
+            loaddownload();
+        });
+
+        closedownloadBrowserButton.addEventListener('click', () => {
+            downloadBrowserModal.style.display = "none";
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == downloadBrowserModal) {
+                downloadBrowserModal.style.display = "none";
+            }
+        });
 </script>
 </body>
 </html>
