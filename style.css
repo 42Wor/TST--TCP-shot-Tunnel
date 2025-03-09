@@ -1,120 +1,245 @@
+/* style.css - Revised with Left Menu and Enhanced Elements */
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    line-height: 1.6;
-    color: #333; /* Default text color */
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.7;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+/* Header Styles */
 header {
-    background-color: #f0f0f0; /* Light grey header background */
-    padding: 40px 0;
+    background-color: #343a40;
+    color: white;
     text-align: center;
+    padding: 3em 0;
+    margin-bottom: 30px;
 }
 
 header h1 {
-    margin-bottom: 10px;
-    color: #222; /* Header title color */
-}
-
-header p.tagline {
-    color: #555; /* Tagline color */
-    font-style: italic;
-}
-
-section {
-    padding: 40px 0;
-}
-
-section h2 {
-    margin-bottom: 20px;
-    color: #444; /* Section heading color */
-    border-bottom: 2px solid #ddd; /* Subtle underline for headings */
-    padding-bottom: 5px;
-}
-
-#features ul {
-    list-style: disc;
-    margin-left: 20px;
-}
-
-#features li {
-    margin-bottom: 10px;
-}
-
-.command-example {
-    background-color: #f9f9f9; /* Light background for command examples */
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-}
-
-.command-example h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #007bff; /* Example command color - blue */
-}
-
-.command {
+    margin-bottom: 0.6em;
+    font-size: 2.8em;
     font-weight: bold;
-    color: #007bff; /* Command text color */
+    letter-spacing: -0.02em;
 }
 
-pre {
-    background-color: #e8e8e8; /* Light grey background for code blocks */
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto; /* For horizontal scrolling if code is too wide */
-    font-family: monospace, monospace; /* Monospace font for code */
+header .subtitle {
+    font-size: 1.3em;
+    color: #d1d1d1;
+    font-weight: 300;
+}
+
+.header-buttons {
+    margin-top: 2em;
 }
 
 .button {
     display: inline-block;
-    background-color: #007bff; /* Button background color - blue */
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    font-size: 1.1em; /* Slightly larger button text */
+}
+
+.primary-button {
+    background-color: #007bff;
     color: white;
-    padding: 12px 24px;
+    border: 1px solid #007bff;
+}
+
+.secondary-button {
+    background-color: #6c757d;
+    color: white;
+    border: 1px solid #6c757d;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.secondary-button:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Specific button styles for Download and Documentation */
+.download-button {
+    background-color: #28a745; /* Green for Download */
+    border-color: #28a745;
+    color: white;
+}
+
+.download-button:hover {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+}
+
+.documentation-button {
+    background-color: #ffc107; /* Yellow/Amber for Documentation */
+    border-color: #ffc107;
+    color: #333; /* Dark text for contrast on yellow */
+}
+
+.documentation-button:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+
+/* Container for Sidebar and Main Content */
+.container {
+    display: flex;
+    max-width: 1200px; /* Wider container to accommodate sidebar */
+    margin: 30px auto;
+    padding: 0 30px; /* Add horizontal padding to container */
+}
+
+/* Sidebar Navigation Styles */
+.sidebar-nav {
+    width: 220px; /* Fixed width for sidebar */
+    margin-right: 30px; /* Spacing between sidebar and main content */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    padding-top: 20px; /* Align top with section headings in main */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav ul li a {
+    display: block; /* Make links block level for full width click area */
+    color: #495057;
     text-decoration: none;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover, .sidebar-nav ul li a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Main Content Styles (Adjusted for Sidebar) */
+main {
+    flex-grow: 1; /* Allow main to take remaining space */
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+/* Homepage Main Content - Full Width */
+.homepage-main {
+    max-width: 1000px; /* Limit width for homepage main content */
+    margin-left: auto;
+    margin-right: auto; /* Center the homepage main content */
+    display: block; /* Override flexbox if container styles were affecting it */
+}
+
+
+section {
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+section h2 {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.2em; /* Slightly larger section headings */
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
 }
 
-.button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+section h3, section h4 {
+    color: #495057;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: bold;
 }
 
+section ul, section ol {
+    padding-left: 25px;
+}
+
+section ul li, section ol li {
+    margin-bottom: 10px;
+}
+
+section pre {
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-radius: 7px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    border: 1px solid #e9ecef;
+}
+
+section code {
+    font-family: 'Courier New', monospace;
+    background-color: #f1f3f5;
+    padding: 3px 7px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+/* Overview Section - Enhanced Style */
+.overview-section {
+    background-color: #e7f3ff; /* Light blue background for overview */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #cde6ff; /* Slightly darker border */
+    margin-bottom: 30px; /* Add margin below overview section */
+}
+
+.overview-section h2 {
+    color: #0056b3; /* Darker blue for overview heading */
+    border-bottom-color: #007bff; /* Match heading underline for blue */
+}
+
+.overview-section p {
+    font-size: 1.1em; /* Slightly larger font for overview text */
+    color: #333; /* Darker text for readability */
+}
+
+
+/* Footer Styles */
 footer {
-    background-color: #333; /* Dark footer background */
-    color: #ddd; /* Light footer text color */
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
+    padding: 25px 0;
+    background-color: #343a40;
+    color: #f8f9fa;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
 }
 
-footer a {
-    color: #fff; /* White link color in footer */
-    text-decoration: none;
-}
 
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive adjustments (optional - for smaller screens) */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    header {
-        padding: 30px 0;
-    }
-    section {
-        padding: 30px 0;
-    }
-}
+/* Font Import - Roboto from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');

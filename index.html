@@ -3,203 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TST - TCP-shot-Tunnel - Command-Line Tool</title>
+    <title>TST - TCP-shot-Tunnel</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Optional: Add favicon -->
-    <!-- <link rel="icon" href="assets/favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <h1>TST - TCP-shot-Tunnel</h1>
-            <p class="tagline">Command-Line Tool for Bridging HTTP to TCP Backends</p>
+        <h1>Welcome to TST - TCP-shot-Tunnel</h1>
+        <p class="subtitle">Your simple command-line tool to bridge TCP to HTTP.</p>
+
+        <div class="header-buttons">
+            <a href="#download" class="button primary-button download-button">Download Now</a>
+            <a href="Documentation.html" class="button secondary-button documentation-button">Documentation</a>
         </div>
     </header>
 
-    <section id="features">
-        <div class="container">
-            <h2>Key Features</h2>
-            <ul>
-                <li><strong>HTTP Frontend for TCP Backends:</strong>  Accepts HTTP requests and forwards them to your backend TCP server.</li>
-                <li><strong>Simple Command-Line Interface:</strong> Easy to use and configure with straightforward commands.</li>
-                <li><strong>System-Wide Installation:</strong> Install the 'tst' command for global access from your terminal.</li>
-                <li><strong>Port Specification:</strong>  Define the exact TCP port for backend connection.</li>
-                <li><strong>Help Command:</strong> Get quick access to usage instructions and command details.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="commands">
-        <div class="container">
-            <h2>Commands & Usage</h2>
-            <p>Get started with TST using these commands:</p>
-
-            <div class="command-example">
-                <h3><span class="command">install</span></h3>
-                <pre><code>tst install</code></pre>
-                <p>Installs the <span class="command">tst</span> command-line tool system-wide, making it accessible from any directory (Linux/macOS).</p>
-            </div>
-
-            <div class="command-example">
-                <h3><span class="command"><port></span></h3>
-                <pre><code>tst 9999</code></pre>
-                <p>Runs the TST service, forwarding HTTP requests to your TCP server on the specified port (e.g., 9999).</p>
-                <p>Replace <span class="command"><port></span> with your desired TCP port number.</p>
-            </div>
-
-            <div class="command-example">
-                <h3><span class="command">help</span></h3>
-                <pre><code>tst help</code></pre>
-                <p>Displays the help message, showing available commands and usage instructions.</p>
-            </div>
-
-            <p>For more detailed information, see the <a href="#documentation">Documentation</a> section.</p>
-        </div>
-    </section>
-
-    <section id="download">
-        <div class="container">
-            <h2>Download & Get Started</h2>
-            <p>You can download the `tst` command-line tool as a zip file. Follow these steps:</p>
-
-            <h3>Download via Zip File</h3>
-            <ol>
-                <li><strong>Download the `tst-tool.zip` file:</strong> Click on the following link to download the `tst` command-line tool as a zip file:
-
-                    <p><a href="[REPLACE THIS WITH YOUR ACTUAL DOWNLOAD LINK TO tst-tool.zip]" class="button">Download tst-tool.zip</a></p>
-
-                    <p>*(Example: If you are using Google Drive, paste the Google Drive shareable link here. If you are hosting it on a web server, paste the direct URL to `tst-tool.zip` here.)*</p>
-
-                </li>
-                <li><strong>Extract the zip file:</strong> After downloading `tst-tool.zip`, extract its contents.
-
-                    <h4>On Linux or macOS:</h4>
-                    <pre><code class="language-bash">unzip tst-tool.zip</code></pre>
-                    <p>This will create a directory containing `tst` and `tst.py`.</p>
-
-                    <h4>On Windows:</h4>
-                    <p>Right-click on `tst-tool.zip` and select "Extract All...". Choose a location to extract. You will get a folder with `tst` and `tst.py`.</p>
-                </li>
-                <li><strong>Proceed with Installation:</strong> After extracting, follow the <a href="#installation">Installation Instructions</a> below.</li>
-            </ol>
-
-        </section>
-
-    <section id="installation">
-        <div class="container">
-            <h2>Installation Instructions</h2>
-            <p>Follow these instructions to install the `tst` command-line tool after downloading and extracting the zip file.</p>
-
-            <ol>
-                <li><strong>Navigate to the directory:</strong> Open your terminal (Linux/macOS) or Command Prompt/PowerShell (Windows) and go to the directory where you extracted `tst` and `tst.py`.</li>
-
-                <li><strong>Make scripts executable (Linux/macOS only):</strong>
-                    <p>On Linux or macOS, make `tst` and `tst.py` executable:</p>
-                    <pre><code class="language-bash">chmod +x tst
-chmod +x tst.py</code></pre>
-                    <p>*(This step is typically not needed on Windows.)*</p>
-                </li>
-
-                <li><strong>Install the `tst` command:</strong> Run the install command provided by the `tst` script.
-
-                    <h4>On Linux/macOS:</h4>
-                    <pre><code class="language-bash">./tst install</code></pre>
-                    <p>You might be asked for your password. If you get "Permission denied", try:</p>
-                    <pre><code class="language-bash">sudo ./tst install</code></pre>
-
-                    <h4>On Windows:</h4>
-                    <p>System-wide installation via the `install` script is not directly supported on Windows. You can run `tst` from the extracted directory using <code>.\tst <port></code>. For system-wide access on Windows, manual PATH configuration is needed (advanced).</p>
-                </li>
-
-                <li><strong>Verify Installation (Optional, Linux/macOS only):</strong>
-                    <p>On Linux/macOS, verify installation:</p>
-                    <pre><code class="language-bash">which tst</code></pre>
-                    <p>This should output `/usr/local/bin/tst`.</p>
-                </li>
-            </ol>
-
-            <p><strong>Prerequisites:</strong></p>
-            <ul>
-                <li><strong>Python 3:</strong> Ensure Python 3 is installed.
-                    <ul>
-                        <li><strong>Linux/macOS:</strong> Check with <code>python3 --version</code>.</li>
-                        <li><strong>Windows:</strong> Install from <a href="https://www.python.org/downloads/" target="_blank">python.org</a> if needed.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="usage">
-        <div class="container">
-            <h2>Usage Instructions</h2>
-            <p>How to use the `tst` command-line tool after installation.</p>
-
-            <ol>
-                <li><strong>Run the `tst` service:</strong> Open your terminal (or Command Prompt/PowerShell on Windows) and start the `tst` service with a TCP port:
-
-                    <h4>Linux/macOS:</h4>
-                    <pre><code class="language-bash">tst <port></code></pre>
-                    <p>*(e.g., <code>tst 9999</code>)*</p>
-
-                    <h4>Windows:</h4>
-                    <pre><code class="language-bash">.\tst <port></code></pre>
-                    <p>*(e.g., <code>.\tst 9999</code> from the extracted directory)*</p>
-                </li>
-
-                <li><strong>Access the HTTP Service:</strong> Open a web browser or HTTP client and send requests to <code>http://localhost:8000</code> or <code>http://127.0.0.1:8000</code>.</li>
-
-                <li><strong>Get Help:</strong> To see usage instructions:
-
-                    <h4>Linux/macOS:</h4>
-                    <pre><code class="language-bash">tst help</code></pre>
-
-                    <h4>Windows:</h4>
-                    <pre><code class="language-bash">.\tst help</code></pre>
-                </li>
-            </ol>
-
-            <p><strong>Important Notes:</strong></p>
-            <ul>
-                <li><strong>TCP Server:</strong> You need a separate TCP server running on <code>127.0.0.1:<port></code> for `tst` to forward requests to.</li>
-                <li><strong>HTTP Port:</strong> The HTTP service provided by `tst` runs on port 8000.</li>
-                <li><strong>Colored Output:</strong> `tst` uses colored output in the terminal (if supported).</li>
-            </ul>
-        </div>
-    </section>
-
-
-    <section id="documentation">
-        <div class="container">
-            <h2>Documentation (Command Details)</h2>
-            <p>Detailed documentation for TST commands.</p>
-
-            <h3>Command: <span class="command">install</span></h3>
-            <p><strong>Description:</strong> Installs the TST command-line tool onto your system (Linux/macOS). This allows you to run the <span class="command">tst</span> command from any directory in your terminal.</p>
-            <p><strong>Usage:</strong></p>
-            <pre><code>tst install</code></pre>
-
-            <h3>Command: <span class="command"><port></span></h3>
-            <p><strong>Description:</strong> Runs the TST service, specifying the TCP port for backend connection. Replace <span class="command"><port></span> with a TCP port number (like 9999).</p>
-            <p><strong>Usage:</strong></p>
-            <pre><code>tst 9999</code></pre>
-            <p>This command starts TST, listening for HTTP requests and forwarding them to your TCP server through the specified port.</p>
-
-            <h3>Command: <span class="command">help</span></h3>
-            <p><strong>Description:</strong> Shows this helpful message. Displays information about how to use the <span class="command">tst</span> command, including available commands and examples.</p>
-            <p><strong>Usage:</strong></p>
-            <pre><code>tst help</code></pre>
-
-            <p>For more in-depth documentation or troubleshooting, please refer to the GitHub repository.</p>
-        </div>
-    </section>
-
     <footer>
-        <div class="container">
-            <p>© 2023 Maaz Waheed.  Version: 1.2.14.  Developed by <a href="https://github.com/42wor" target="_blank">Maaz Waheed</a></p>
-        </div>
+        <p>© 2023 TST - TCP-shot-Tunnel. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
