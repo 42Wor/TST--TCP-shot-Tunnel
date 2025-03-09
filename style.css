@@ -1,245 +1,223 @@
-/* style.css - Revised with Left Menu and Enhanced Elements */
-body {
-    font-family: 'Roboto', sans-serif;
+/* style.css */
+
+/* Basic Reset and General Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.7;
 }
 
-/* Header Styles */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* For sidebar layout in documentation */
+}
+
 header {
-    background-color: #343a40;
-    color: white;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    padding: 3em 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Space below header */
 }
 
 header h1 {
-    margin-bottom: 0.6em;
-    font-size: 2.8em;
-    font-weight: bold;
-    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    font-size: 2.5em;
 }
 
-header .subtitle {
-    font-size: 1.3em;
-    color: #d1d1d1;
-    font-weight: 300;
+header p.subtitle {
+    font-size: 1.2em;
+    color: #ddd;
 }
 
-.header-buttons {
-    margin-top: 2em;
-}
-
-.button {
-    display: inline-block;
-    padding: 14px 28px;
-    text-decoration: none;
-    border-radius: 6px;
-    margin: 0 12px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    font-size: 1.1em; /* Slightly larger button text */
-}
-
-.primary-button {
-    background-color: #007bff;
-    color: white;
-    border: 1px solid #007bff;
-}
-
-.secondary-button {
-    background-color: #6c757d;
-    color: white;
-    border: 1px solid #6c757d;
-}
-
-.primary-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.secondary-button:hover {
-    background-color: #545b62;
-    border-color: #545b62;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Specific button styles for Download and Documentation */
-.download-button {
-    background-color: #28a745; /* Green for Download */
-    border-color: #28a745;
-    color: white;
-}
-
-.download-button:hover {
-    background-color: #1e7e34;
-    border-color: #1e7e34;
-}
-
-.documentation-button {
-    background-color: #ffc107; /* Yellow/Amber for Documentation */
-    border-color: #ffc107;
-    color: #333; /* Dark text for contrast on yellow */
-}
-
-.documentation-button:hover {
-    background-color: #e0a800;
-    border-color: #e0a800;
-}
-
-
-/* Container for Sidebar and Main Content */
-.container {
-    display: flex;
-    max-width: 1200px; /* Wider container to accommodate sidebar */
-    margin: 30px auto;
-    padding: 0 30px; /* Add horizontal padding to container */
-}
-
-/* Sidebar Navigation Styles */
+/* Navigation Sidebar (Documentation.html) */
 .sidebar-nav {
-    width: 220px; /* Fixed width for sidebar */
-    margin-right: 30px; /* Spacing between sidebar and main content */
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
-    padding-top: 20px; /* Align top with section headings in main */
+    width: 250px;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
 }
 
 .sidebar-nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-.sidebar-nav ul li {
+.sidebar-nav li {
     margin-bottom: 10px;
 }
 
-.sidebar-nav ul li a {
-    display: block; /* Make links block level for full width click area */
-    color: #495057;
+.sidebar-nav a {
+    display: block;
+    padding: 8px 15px;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+    border-left: 3px solid transparent; /* For active state indicator */
+    transition: background-color 0.3s ease, color 0.3s ease, border-left-color 0.3s ease;
 }
 
-.sidebar-nav ul li a:hover, .sidebar-nav ul li a.active {
+.sidebar-nav a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+    border-left-color: #007bff;
+}
+
+.sidebar-nav a.active {
     background-color: #007bff;
-    color: white;
+    color: #fff;
+    border-left-color: #0056b3; /* Darker shade for active indicator */
 }
 
-/* Main Content Styles (Adjusted for Sidebar) */
+/* Main Content (Documentation.html) */
 main {
-    flex-grow: 1; /* Allow main to take remaining space */
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Take remaining space */
+    padding-left: 20px;
 }
-/* Homepage Main Content - Full Width */
-.homepage-main {
-    max-width: 1000px; /* Limit width for homepage main content */
-    margin-left: auto;
-    margin-right: auto; /* Center the homepage main content */
-    display: block; /* Override flexbox if container styles were affecting it */
-}
-
 
 section {
-    margin-bottom: 40px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Separator between sections */
 }
 
 section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+    border-bottom: none; /* Remove border from last section */
+    margin-bottom: 0; /* Remove margin from last section if needed */
     padding-bottom: 0;
 }
 
 section h2 {
-    color: #343a40;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 2.2em; /* Slightly larger section headings */
-    font-weight: bold;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 8px;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    display: inline-block; /* To make border only as wide as text */
 }
 
-section h3, section h4 {
-    color: #495057;
-    margin-top: 25px;
-    margin-bottom: 12px;
-    font-weight: bold;
-}
-
-section ul, section ol {
-    padding-left: 25px;
-}
-
-section ul li, section ol li {
+section p {
     margin-bottom: 10px;
+    color: #555;
 }
 
-section pre {
-    background-color: #f1f3f5;
-    padding: 15px;
-    border-radius: 7px;
-    overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    font-size: 0.95em;
-    border: 1px solid #e9ecef;
+/* Header Buttons (index.html) */
+.header-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
 }
 
-section code {
-    font-family: 'Courier New', monospace;
-    background-color: #f1f3f5;
-    padding: 3px 7px;
-    border-radius: 4px;
-    border: 1px solid #e9ecef;
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    text-align: center; /* Ensure text is centered within button */
 }
 
-/* Overview Section - Enhanced Style */
-.overview-section {
-    background-color: #e7f3ff; /* Light blue background for overview */
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #cde6ff; /* Slightly darker border */
-    margin-bottom: 30px; /* Add margin below overview section */
+.primary-button {
+    background-color: #007bff;
+    color: #fff;
 }
 
-.overview-section h2 {
-    color: #0056b3; /* Darker blue for overview heading */
-    border-bottom-color: #007bff; /* Match heading underline for blue */
+.primary-button:hover {
+    background-color: #0056b3;
 }
 
-.overview-section p {
-    font-size: 1.1em; /* Slightly larger font for overview text */
-    color: #333; /* Darker text for readability */
+.secondary-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc; /* Add border for secondary button */
 }
 
+.secondary-button:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    border-color: #bbb;
+}
 
 /* Footer Styles */
 footer {
+    background-color: #34495e;
+    color: #fff;
     text-align: center;
-    padding: 25px 0;
-    background-color: #343a40;
-    color: #f8f9fa;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 50px;
+    padding: 15px 0;
+    margin-top: 40px; /* Space above footer */
 }
 
+/* Responsive adjustments - Optional but recommended */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sidebar and main content on smaller screens */
+        padding: 15px;
+        margin: 10px auto;
+    }
 
-/* Font Import - Roboto from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    .sidebar-nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .sidebar-nav ul {
+        display: flex; /* Horizontal navigation on smaller screens */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        white-space: nowrap; /* Prevent wrapping of list items */
+    }
+
+    .sidebar-nav li {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    .sidebar-nav a {
+        border-left: none; /* Remove left border in horizontal nav */
+        border-bottom: 3px solid transparent; /* Indicator at bottom for active state */
+    }
+
+    .sidebar-nav a:hover {
+        border-bottom-color: #007bff;
+        border-left-color: transparent; /* Ensure left border is removed on hover */
+    }
+
+    .sidebar-nav a.active {
+        border-bottom-color: #0056b3;
+        border-left-color: transparent; /* Ensure left border is removed when active */
+    }
+
+    main {
+        padding-left: 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p.subtitle {
+        font-size: 1em;
+    }
+
+    .header-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 10px;
+    }
+}

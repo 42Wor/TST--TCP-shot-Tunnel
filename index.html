@@ -1,3 +1,5 @@
+<!--index.html-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +8,100 @@
     <title>TST - TCP-shot-Tunnel</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+/* style.css */
+
+body {
+    background-image: url('tst-tool.jpg'); /* Path to background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    font-family: sans-serif;
+    color: #fff; /* Changed default text color to white for better contrast on potentially darker backgrounds */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a; /* Added a dark fallback background color for better image loading experience */
+}
+
+
+h1 {
+    color: #f0f0f0; /* Slightly softer white for heading */
+    text-shadow: 2px 2px 10px #ff00b3; /* Increased text shadow blur and intensity, adjusted color */
+    font-size: 2.5em; /* Slightly larger heading for impact */
+    margin-bottom: 0.5em; /* Reduced margin below heading */
+}
+.subtitle {
+    color: #d0d0d0; /* Softer grey for subtitle */
+    margin-bottom: 2em; /* Increased margin below subtitle for spacing */
+    text-shadow: 1px 1px 2px #333; /* Darker subtitle shadow for better definition */
+    font-size: 1.1em; /* Slightly larger subtitle for readability */
+    font-weight: lighter; /* Lighter font weight for subtitle */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px; /* Slightly larger buttons */
+    text-decoration: none;
+    color: #fff; /* White button text */
+    border-radius: 8px; /* More rounded buttons */
+    font-weight: 600; /* Slightly bolder button text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for hover effect */
+    border: none; /* Removed default button border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle button shadow */
+}
+
+.primary-button {
+    background-color: #ff00b3ad; /* Vibrant pink primary button color */
+}
+
+.secondary-button {
+    background-color: #6c54a3c4; /* Deep purple secondary button color */
+}
+
+.primary-button:hover {
+    background-color: #e0009a; /* Slightly darker pink on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+.secondary-button:hover {
+    background-color: #584589; /* Slightly darker purple on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+
+/* Optional: Add some subtle animation to the page load */
+body {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+</style>
 <body>
-    <header>
+
         <h1>Welcome to TST - TCP-shot-Tunnel</h1>
         <p class="subtitle">Your simple command-line tool to bridge TCP to HTTP.</p>
 
         <div class="header-buttons">
             <a href="#download" class="button primary-button download-button">Download Now</a>
             <a href="Documentation.html" class="button secondary-button documentation-button">Documentation</a>
-        </div>
-    </header>
 
-    <footer>
-        <p>© 2023 TST - TCP-shot-Tunnel. All rights reserved.</p>
-    </footer>
+
+
 </body>
 </html>
